@@ -1,6 +1,7 @@
 # Simple-RVC
 
 
-![yourname](http://https://counter.seku.su/cmoe?name=srvc&theme=moebooru-h)
+![counter](https://counter.seku.su/cmoe?name=demo&theme=mb)
+
 
 Simple RVC Inference
