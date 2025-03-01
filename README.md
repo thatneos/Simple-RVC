@@ -48,4 +48,4 @@ rvc_util.rvc_infer(
     hubert_model=hubert_model,
     f0autotune=False
 )
-``
+```
