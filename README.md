@@ -14,6 +14,10 @@ config = Config(device="cuda:0", is_half=True)
 ```
 ## Create an instance of the RVC utility
 ```
+
+from srvc import RVCUtil
+
+
 rvc_util = RVCUtil(device="cuda:0", is_half=True, config=config)
 ```
 ## Load the Hubert model
