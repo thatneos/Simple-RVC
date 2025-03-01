@@ -8,25 +8,25 @@ Simple RVC Inference
 
 # How to use
 
-# Initialize configuration (using your provided Config class)
+## Initialize configuration (using your provided Config class)
 ```
 config = Config(device="cuda:0", is_half=True)
 ```
-# Create an instance of the RVC utility
+## Create an instance of the RVC utility
 ```
 rvc_util = RVCUtil(device="cuda:0", is_half=True, config=config)
 ```
-# Load the Hubert model
+## Load the Hubert model
 
 ```
 hubert_model = rvc_util.load_hubert("path/to/hubert_model.pt")
 ```
-# Load the voice conversion model
+## Load the voice conversion model
 
 ```
 cpt, version, net_g, tgt_sr, vc = rvc_util.get_vc("path/to/vc_model.pt")
 ```
-# Run inference with desired parameters
+## Run inference with desired parameters
 
 ```
 rvc_util.rvc_infer(
