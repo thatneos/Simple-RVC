@@ -12,7 +12,7 @@ from srvc.pack.models import (
     SynthesizerTrnMs768NSFsid_nono,
 )
 from srvc.my_utils import load_audio
-from srvc.vc_infer_pipeline import VC
+from srvc.pipeline import VC
 
 BASE_DIR = os.getcwd()
 
