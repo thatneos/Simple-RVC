@@ -9,7 +9,7 @@ pedalboard
 torch<2.6
 torchaudio<2.6
 torchvision<0.21
-https://github.com/Bebra777228/TrainVocModel-EN/releases/download/fixed-packages/fairseq_fixed-0.13.0-cp311-cp311-linux_x86_6
+fairseq2
 ffmpeg-python>=0.2.0
 praat-parselmouth>=0.4.2
 torchcrepe==0.0.23
