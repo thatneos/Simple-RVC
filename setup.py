@@ -28,7 +28,7 @@ setup(
         "mega.py",
         "gdown",
         "wget",
-        "gradio==4.43.0",
+        "gradio==4.29.0",
         "audio-separator[gpu]==0.30.1",
         "sox",
         "pedalboard",
