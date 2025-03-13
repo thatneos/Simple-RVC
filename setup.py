@@ -14,14 +14,14 @@ except FileNotFoundError:
     long_description = ""
 
 setup(
-    name="Simple-RVC",  # Change this to your package name
+    name="srvc",  # Package name is now srvc
     version="0.1.0",
     author="Thatneos",
     author_email="",
     description="A simple RVC Inference Python wrapper.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/thatneos/Simple-RVC/tree/main",  # Change as needed
+    url="https://github.com/thatneos/Simple-RVC/tree/main",
     packages=find_packages(),
     install_requires=[
         "requests",
@@ -36,7 +36,7 @@ setup(
         "torchaudio<2.6",
         "torchvision<0.21",
         "fairseq2",
-        "yt-dlp",  # Fixed missing quote
+        "yt-dlp",
         "ffmpeg-python>=0.2.0",
         "praat-parselmouth>=0.4.2",
         "torchcrepe==0.0.23",
@@ -50,7 +50,7 @@ setup(
     python_requires=">=3.6",
     classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",  # Adjust the license if needed
+        "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
     include_package_data=True,
