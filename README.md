@@ -1,38 +1,51 @@
-# Simple-RVC
 
+# Simple RVC
 
 ![counter](https://counter.seku.su/cmoe?name=demo&theme=mb)
 
+A Simple RVC Inference
 
-Simple RVC Inference
+## How to Use
 
-# How to use
+### Initialize Configuration
 
-## Initialize configuration (using your provided Config class)
-```
+First, initialize the configuration using your provided `Config` class:
+
+```python
 config = Config(device="cuda:0", is_half=True)
 ```
-## Create an instance of the RVC utility
-```
 
+### Create an Instance of the RVC Utility
+
+Next, create an instance of the `RVCUtil`:
+
+```python
 from srvc import RVCUtil
-
 
 rvc_util = RVCUtil(device="cuda:0", is_half=True, config=config)
 ```
-## Load the Hubert model
 
-```
+### Load the Hubert Model
+
+Load the Hubert model with the following command:
+
+```python
 hubert_model = rvc_util.load_hubert("path/to/hubert_model.pt")
 ```
-## Load the voice conversion model
 
-```
-cpt, version, net_g, tgt_sr, vc = rvc_util.get_vc("path/to/vc_model.pt")
-```
-## Run inference with desired parameters
+### Load the Voice Conversion Model
 
+Load the voice conversion model using:
+
+```python
+cpt, version, net_g, tgt_sr, vc = rvc_util.get_vc("path/to/vc_model.pth")
 ```
+
+### Run Inference
+
+Finally, run the inference with the desired parameters:
+
+```python
 rvc_util.rvc_infer(
     index_path="path/to/index_file",
     index_rate=0.5,
@@ -53,3 +66,10 @@ rvc_util.rvc_infer(
     f0autotune=False
 )
 ```
+
+### Notes
+
+- Ensure that you replace the placeholder paths (e.g., `path/to/hubert_model.pth`) with the actual paths to your model files.
+- Adjust the inference parameters according to your requirements.
+
+This should make the README more structured and easier to follow.
