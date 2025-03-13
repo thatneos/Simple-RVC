@@ -4,7 +4,7 @@ import os
 import torch
 from fairseq import checkpoint_utils
 from scipy.io import wavfile
-
+import yt_dlp
 from srvc.pack.models import (
     SynthesizerTrnMs256NSFsid,
     SynthesizerTrnMs256NSFsid_nono,
@@ -15,6 +15,48 @@ from srvc.my_utils import load_audio
 from srvc.pipeline import VC
 
 BASE_DIR = Path(os.getcwd())
+
+
+
+
+
+class MyLogger:
+    def debug(self, msg):
+        print("[CUSTOM DEBUG] " + msg)
+
+    def info(self, msg):
+        print("[CUSTOM INFO] " + msg)
+
+    def warning(self, msg):
+        print("[CUSTOM WARNING] " + msg)
+
+    def error(self, msg):
+        print("[CUSTOM ERROR] " + msg)
+
+def ytdl(url: str) -> None:
+    """
+    Download audio from a YouTube video using the yt-dlp Python API.
+
+    This function uses yt-dlp options to download the best available audio,
+    extract it, and convert it to a WAV file. It also uses cookies from 'srvc/cnfg.txt'
+    and a custom logger for logging output.
+
+    Args:
+        url (str): The URL of the YouTube video.
+    """
+    ydl_opts = {
+        'format': 'bestaudio',
+        'cookiefile': 'srvc/cnfg.txt',
+        'logger': MyLogger(),  # Use our custom logger
+        'postprocessors': [{
+            'key': 'FFmpegExtractAudio',
+            'preferredcodec': 'wav',
+            'preferredquality': '0',  # '0' indicates best quality
+        }]
+    }
+    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+        ydl.download([url])
+
 
 class RVCUtil:
     def __init__(self, device, is_half, config):
