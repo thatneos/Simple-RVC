@@ -18,7 +18,7 @@ setup(
     version="0.1.0",
     author="Thatneos",
     author_email="",
-    description="A simple RVC Inference pythin wapper.",
+    description="A simple RVC Inference Python wrapper.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/thatneos/Simple-RVC/tree/main",  # Change as needed
@@ -36,7 +36,7 @@ setup(
         "torchaudio<2.6",
         "torchvision<0.21",
         "fairseq2",
-        "yt-dlp
+        "yt-dlp",  # Fixed missing quote
         "ffmpeg-python>=0.2.0",
         "praat-parselmouth>=0.4.2",
         "torchcrepe==0.0.23",
